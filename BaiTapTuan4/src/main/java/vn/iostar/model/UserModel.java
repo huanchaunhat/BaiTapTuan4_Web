@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class UserModel implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1104181259759608679L;
 	private int id;
 	private String email;
 	private String userName;

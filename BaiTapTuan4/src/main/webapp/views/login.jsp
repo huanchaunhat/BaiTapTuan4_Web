@@ -1,122 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f9f9f9;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!-- BEGIN CONTENT -->
+          <div class="col-md-9 col-sm-9">
+            <h1>Login</h1>
+            <div class="content-form-page">
+              <div class="row">
+                <div class="col-md-7 col-sm-7">
+                <c:if test = "${alert != null}">
+<h3 class="alert alert danger">${alert}</h3>
+</c:if>
+                  <form action="{pageContext.request.contextPath }/login" method="post" class="form-horizontal form-without-legend" role="form">
+                    <div class="form-group">
+                      <label for="email" class="col-lg-4 control-label">Username <span class="require">*</span></label>
+                      <div class="col-lg-8">
+                        <input type="text" class="form-control" id="username" name="username" require>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
+                      <div class="col-lg-8">
+                        <input type="text" class="form-control" id="password" name="password" id="password">
+                        <input type="checkbox" name="remember" id="remember"> Remember me
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-offset-4 padding-left-0">
+                        <a href="{pageContext.request.contextPath }/forgetpass">Forget Password?</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-10 padding-right-30">
+                        <hr>
+                        <div class="login-socio">
+                            <p class="text-muted">or login using:</p>
+                            <ul class="social-icons">
+                                <li><a href="#" data-original-title="facebook" class="facebook" title="facebook"></a></li>
+                                <li><a href="#" data-original-title="Twitter" class="twitter" title="Twitter"></a></li>
+                                <li><a href="#" data-original-title="Google Plus" class="googleplus" title="Google Plus"></a></li>
+                                <li><a href="#" data-original-title="Linkedin" class="linkedin" title="LinkedIn"></a></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-4 col-sm-4 pull-right">
+                  <div class="form-info">
+                    <h2><em>Important</em> Information</h2>
+                    <p>Duis autem vel eum iriure at dolor vulputate velit esse vel molestie at dolore.</p>
 
-.login-container {
-	width: 350px;
-	background-color: white;
-	padding: 20px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
-}
-
-h2 {
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-.input-group {
-	display: flex;
-	align-items: center;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	padding: 10px;
-}
-
-.input-group i {
-	margin-right: 10px;
-}
-
-.input-group input {
-	border: none;
-	outline: none;
-	flex: 1;
-}
-
-.remember-group {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
-}
-
-.remember-group input {
-	margin-right: 5px;
-}
-
-.btn {
-	width: 100%;
-	padding: 10px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
-}
-
-.btn:hover {
-	background-color: #0056b3;
-}
-
-.links {
-	text-align: center;
-	margin-top: 15px;
-}
-
-.links a {
-	text-decoration: none;
-	color: #007bff;
-}
-
-.links a:hover {
-	text-decoration: underline;
-}
-</style>
-</head>
-<body>
-	<form action="login" method="post">
-		<div class="login-container">
-			<h2>Đăng Nhập Vào Hệ Thống</h2>
-
-			<div class="input-group">
-				<i class="fa fa-user"></i> <input type="text"
-					placeholder="Tên đăng nhập" name="username" id="username">
-			</div>
-
-			<div class="input-group">
-				<i class="fa fa-lock"></i> <input type="password"
-					placeholder="Mật khẩu" name="password" id="password">
-			</div>
-
-			<div class="remember-group">
-				<label><input type="checkbox" name="remember" id="remember">
-					Nhớ tôi</label> <a href="/BaiTapTuan4/checkuser">Quên mật khẩu?</a>
-			</div>
-
-			<button class="btn">Đăng nhập</button>
-
-			<div class="links">
-				<p>
-					Nếu bạn chưa có tài khoản trên hệ thống, thì hãy <a
-						href="/BaiTapTuan4/register">Đăng ký</a>
-				</p>
-			</div>
-		</div>
-		</form>
-</body>
-</html>
+                    <button type="button" class="btn btn-default">More details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END CONTENT -->
